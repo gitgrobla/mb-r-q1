@@ -7,7 +7,6 @@ export const setupDb = async () => {
         driver: sqlite3.Database,
     });
 
-    await db.migrate();
-
+    await db.migrate({migrationsPath: './migrations'});
     return db;
 }
